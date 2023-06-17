@@ -1,0 +1,22 @@
+# DNS - Arquivo reverso
+zone "1.16.172.in-addr.arpa" {
+   type slave;
+   file "dominio.rev";
+   masters { 172.16.1.2; };
+};
+
+# Dominio - Laboratorio.lan
+
+zone "laboratorio.lan" {
+   type slave;
+   file "laboratorio.db";
+   masters { 172.16.1.2; };
+};
+
+# Dominio - Prova.lan
+
+zone "prova.lan" {
+   type slave;
+   file "prova.db";
+   masters { 172.16.1.2; };
+};

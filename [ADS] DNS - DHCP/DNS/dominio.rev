@@ -1,0 +1,22 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     dns1.laboratorio.lan. root.laboratorio.lan. (
+                              1         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      laboratorio.lan.
+@       IN      NS      prova.lan.
+
+
+dns1    IN      A       172.16.1.2
+dns2    IN      A       172.16.1.3
+
+2       IN      PTR     dns1.laboratorio.lan.
+3       IN      PTR     dns2.laboratorio.lan.
+4       IN      PTR     web.laboratorio.lan.
+5       IN      PTR     storage.laboratorio.lan.

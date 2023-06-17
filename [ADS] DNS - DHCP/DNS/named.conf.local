@@ -1,0 +1,30 @@
+
+
+# DNS - Arquivo reverso
+zone "1.16.172.in-addr.arpa" {
+   type master;
+   file "/etc/bind/dominio.rev";
+   allow-transfer { 172.16.1.3; };
+   also-notify { 172.16.1.3; };
+};
+
+
+
+# Dominio - Laboratorio.lan
+
+zone "laboratorio.lan" {
+   type master;
+   file "/etc/bind/laboratorio/laboratorio.db";
+   allow-transfer { 172.16.1.3; };
+   also-notify { 172.16.1.3; };
+};
+
+
+# Dominio - Prova.lan
+
+zone "prova.lan" {
+   type master;
+   file "/etc/bind/prova/prova.db";
+   allow-transfer { 172.16.1.3; };
+   also-notify { 172.16.1.3; };
+};
